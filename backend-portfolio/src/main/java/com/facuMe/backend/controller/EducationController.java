@@ -47,6 +47,7 @@ public class EducationController {
         eduToUpdate.setFechaFinalizacion(edu.getFechaFinalizacion());
         eduToUpdate.setDescripcion(edu.getDescripcion());
         eduToUpdate.setEstudioActual(edu.getEstudioActual());
+        eduToUpdate.setUrlFoto(edu.getUrlFoto());
         
         eduServ.createEducation(eduToUpdate);
     }

@@ -1,10 +1,13 @@
 
 package com.facuMe.backend.repository;
 
-import com.facuMe.backend.model.Projects;
+import com.facuMe.backend.model.Skill;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-public interface ProjectsRepository extends JpaRepository <Projects, Long>{
 
+@Repository
+public interface SkillRepository extends JpaRepository <Skill, Long>{
+    
 }
+

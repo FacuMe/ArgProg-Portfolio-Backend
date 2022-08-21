@@ -10,7 +10,7 @@ import lombok.Setter;
 
 @Getter @Setter
 @Entity
-public class Projects {
+public class Project {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,11 +21,12 @@ public class Projects {
     private String fechaFinalizacion;
     private String descripcion;
     private Boolean proyectoActual;
+    private String urlFoto;
     
-    public Projects() {
+    public Project() {
     }
 
-    public Projects(Long id, String nombre, String entidad, String fechaInicio, String fechaFinalizacion, String descripcion, Boolean proyectoActual) {
+    public Project(Long id, String nombre, String entidad, String fechaInicio, String fechaFinalizacion, String descripcion, Boolean proyectoActual, String urlFoto) {
         this.id = id;
         this.nombre = nombre;
         this.entidad = entidad;
@@ -33,6 +34,7 @@ public class Projects {
         this.fechaFinalizacion = fechaFinalizacion;
         this.descripcion = descripcion;
         this.proyectoActual = proyectoActual;
+        this.urlFoto = urlFoto;
     }
     
 }

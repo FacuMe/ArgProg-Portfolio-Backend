@@ -48,6 +48,7 @@ public class ExperienceController {
         expToUpdate.setTipoEmpleo(exp.getTipoEmpleo());
         expToUpdate.setDescripcion(exp.getDescripcion());
         expToUpdate.setEmpleoActual(exp.getEmpleoActual());
+        expToUpdate.setUrlFoto(exp.getUrlFoto());
         
         expServ.createExperience(expToUpdate);
     }

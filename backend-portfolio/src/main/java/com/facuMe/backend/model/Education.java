@@ -21,11 +21,12 @@ public class Education {
     private String fechaFinalizacion;
     private String descripcion;
     private Boolean estudioActual;
+    private String urlFoto;
     
     public Education() {
     }
 
-    public Education(Long id, String institucion, String nombre, String fechaInicio, String fechaFinalizacion, String descripcion, Boolean estudioActual) {
+    public Education(Long id, String institucion, String nombre, String fechaInicio, String fechaFinalizacion, String descripcion, Boolean estudioActual, String UrlFoto) {
         this.id = id;
         this.institucion = institucion;
         this.nombre = nombre;
@@ -33,6 +34,7 @@ public class Education {
         this.fechaFinalizacion = fechaFinalizacion;
         this.descripcion = descripcion;
         this.estudioActual = estudioActual;
+        this.urlFoto = urlFoto;
     }
     
     

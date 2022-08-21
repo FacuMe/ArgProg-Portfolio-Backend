@@ -1,26 +1,26 @@
 
 package com.facuMe.backend.service;
 
-import com.facuMe.backend.model.Projects;
-import com.facuMe.backend.repository.ProjectsRepository;
+import com.facuMe.backend.model.Project;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.facuMe.backend.repository.ProjectRepository;
 
 @Service
-public class ProjectsService implements IProjectsService {
+public class ProjectService implements IProjectService {
 
     @Autowired
-    public ProjectsRepository projRepo;
+    public ProjectRepository projRepo;
     
     
     @Override
-    public List<Projects> showProjects() {
+    public List<Project> showProjects() {
         return projRepo.findAll();
     }
 
     @Override
-    public void createProject(Projects proj) {
+    public void createProject(Project proj) {
         projRepo.save(proj);
     }
 
@@ -30,7 +30,7 @@ public class ProjectsService implements IProjectsService {
     }
 
     @Override
-    public Projects searchProject(Long id) {
+    public Project searchProject(Long id) {
         return projRepo.findById(id).orElse(null);
     }
     

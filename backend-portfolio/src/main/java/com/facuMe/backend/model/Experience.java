@@ -23,11 +23,12 @@ public class Experience {
     private String tipoEmpleo;
     private String descripcion;
     private Boolean empleoActual;
+    private String urlFoto;
     
     public Experience() {
     }
 
-    public Experience(Long id, String puesto, String empleador, String fechaIngreso, String fechaSalida, String tipoEmpleo, String descripcion, Boolean empleoActual) {
+    public Experience(Long id, String puesto, String empleador, String fechaIngreso, String fechaSalida, String tipoEmpleo, String descripcion, Boolean empleoActual, String urlFoto) {
         this.id = id;
         this.puesto = puesto;
         this.empleador = empleador;
@@ -36,6 +37,7 @@ public class Experience {
         this.tipoEmpleo = tipoEmpleo;
         this.descripcion = descripcion;
         this.empleoActual = empleoActual;
+        this.urlFoto = urlFoto;
     }
 
     

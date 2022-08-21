@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class EducationService implements IEducationService{
+public class EducationService implements IEducationService {
 
     @Autowired
     public EducationRepository eduRepo;
