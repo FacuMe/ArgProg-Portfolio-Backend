@@ -5,6 +5,7 @@ import com.facuMe.backend.model.Experience;
 import com.facuMe.backend.service.IExperienceService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,6 +24,7 @@ public class ExperienceController {
     @Autowired
     private IExperienceService expServ;
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping ("/new/experience")
     public void createExperience (@RequestBody Experience exp) {
         expServ.createExperience(exp);
@@ -34,11 +36,13 @@ public class ExperienceController {
         return expServ.showExperience();
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping ("/delete/experience/{id}")
     public void deleteExperience(@PathVariable Long id){
         expServ.deleteExperience(id);
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping ("/save/experience/{id}")
     public void editExperience (@PathVariable long id, 
                                       @RequestBody Experience exp) {

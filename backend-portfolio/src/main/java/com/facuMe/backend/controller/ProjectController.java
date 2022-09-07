@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.facuMe.backend.service.IProjectService;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 
@@ -24,6 +25,7 @@ public class ProjectController {
     @Autowired
     private IProjectService projServ;
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping ("/new/project")
     public void createProject (@RequestBody Project proj) {
         projServ.createProject(proj);
@@ -35,11 +37,13 @@ public class ProjectController {
         return projServ.showProjects();
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping ("/delete/project/{id}")
     public void deleteProject(@PathVariable Long id){
         projServ.deleteProject(id);
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping ("/save/project/{id}")
     public void editProject (@PathVariable long id, 
                                @RequestBody Project proj) {

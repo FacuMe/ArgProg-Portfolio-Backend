@@ -5,6 +5,7 @@ import com.facuMe.backend.model.Profile;
 import com.facuMe.backend.service.IProfileService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,6 +25,7 @@ public class ProfileController {
     @Autowired
     private IProfileService profServ;
    
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping ("/new/profile")
     public void createProfile (@RequestBody Profile prof) {
         profServ.createProfile(prof);
@@ -35,11 +37,13 @@ public class ProfileController {
         return profServ.showProfile();
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping ("/delete/profile/{id}")
     public void deleteProfile(@PathVariable Long id){
         profServ.deleteProfile(id);
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping ("/save/profile/{id}")
     public void editProfile (@PathVariable long id,
                               @RequestBody Profile prof) {

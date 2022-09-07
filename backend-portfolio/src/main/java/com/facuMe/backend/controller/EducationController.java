@@ -5,6 +5,7 @@ import com.facuMe.backend.model.Education;
 import com.facuMe.backend.service.IEducationService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,6 +24,7 @@ public class EducationController {
     @Autowired
     private IEducationService eduServ;
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping ("/new/education")
     public void createEducation (@RequestBody Education edu) {
         eduServ.createEducation(edu);
@@ -34,11 +36,13 @@ public class EducationController {
         return eduServ.showEducation();
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping ("/delete/education/{id}")
     public void deleteEducation(@PathVariable Long id){
         eduServ.deleteEducation(id);
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping ("/save/education/{id}")
     public void editEducation (@PathVariable long id, 
                                @RequestBody Education edu) {
