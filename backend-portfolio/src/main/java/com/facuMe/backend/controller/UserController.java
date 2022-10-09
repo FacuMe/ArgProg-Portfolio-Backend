@@ -55,7 +55,6 @@ public class UserController {
         userToUpdate.setFechaNacimiento(user.getFechaNacimiento());
         userToUpdate.setDomicilio(user.getDomicilio());
         userToUpdate.setUrlFotoPerfil(user.getUrlFotoPerfil());
-        userToUpdate.setUrlFotoLogo(user.getUrlFotoLogo());
         userToUpdate.setCorreoElectronico(user.getCorreoElectronico());
         
         userServ.createUser(userToUpdate);

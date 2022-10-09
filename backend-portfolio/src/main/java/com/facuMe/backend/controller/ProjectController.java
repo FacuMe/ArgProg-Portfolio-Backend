@@ -56,6 +56,7 @@ public class ProjectController {
         projToUpdate.setDescripcion(proj.getDescripcion());
         projToUpdate.setProyectoActual(proj.getProyectoActual());
         projToUpdate.setUrlFoto(proj.getUrlFoto());
+        projToUpdate.setUrlProyecto(proj.getUrlProyecto());
         
         projServ.createProject(projToUpdate);
     }

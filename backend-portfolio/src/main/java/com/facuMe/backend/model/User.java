@@ -23,13 +23,12 @@ public class User {
     private String fechaNacimiento;
     private String domicilio;
     private String urlFotoPerfil;
-    private String urlFotoLogo;
     private String correoElectronico;
     
     public User() {
     }
 
-    public User(Long id, String nombre, String apellido, String descripcion1, String descripcion2, String fechaNacimiento, String domicilio, String urlFotoPerfil, String urlFotoLogo, String correoElectronico) {
+    public User(Long id, String nombre, String apellido, String descripcion1, String descripcion2, String fechaNacimiento, String domicilio, String urlFotoPerfil, String correoElectronico) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -38,7 +37,6 @@ public class User {
         this.fechaNacimiento = fechaNacimiento;
         this.domicilio = domicilio;
         this.urlFotoPerfil = urlFotoPerfil;
-        this.urlFotoLogo = urlFotoLogo;
         this.correoElectronico = correoElectronico;
     }
     

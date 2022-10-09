@@ -22,11 +22,12 @@ public class Project {
     private String descripcion;
     private Boolean proyectoActual;
     private String urlFoto;
+    private String urlProyecto;
     
     public Project() {
     }
 
-    public Project(Long id, String nombre, String entidad, String fechaInicio, String fechaFinalizacion, String descripcion, Boolean proyectoActual, String urlFoto) {
+    public Project(Long id, String nombre, String entidad, String fechaInicio, String fechaFinalizacion, String descripcion, Boolean proyectoActual, String urlFoto, String urlProyecto) {
         this.id = id;
         this.nombre = nombre;
         this.entidad = entidad;
@@ -35,6 +36,7 @@ public class Project {
         this.descripcion = descripcion;
         this.proyectoActual = proyectoActual;
         this.urlFoto = urlFoto;
+        this.urlProyecto = urlProyecto;
     }
     
 }
