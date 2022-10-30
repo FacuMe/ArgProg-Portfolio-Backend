@@ -16,7 +16,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin
+//@CrossOrigin
+@CrossOrigin(origins= {"https://front-proyectofinal-argprog.web.app/", "https://facume-portfolio-argprog.web.app/"})
 
 @RestController
 public class EducationController {
